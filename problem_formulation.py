@@ -263,7 +263,56 @@ def get_model_for_problem_formulation(problem_formulation_id):
             outcomes.append(ScalarOutcome('RfR Total Costs {}'.format(n), kind=direction))
             outcomes.append(ScalarOutcome('Expected Evacuation Costs {}'.format(n), kind=direction))
         dike_model.outcomes = outcomes
+<<<<<<< HEAD
         
+=======
+           
+    # Group 22 Problem Formulation:
+    elif problem_formulation_id == 6:
+        outcomes = []
+        variable_names = []
+        variable_names_ = []
+        variable_names__ = []        
+        variable_names___ = []
+        
+        for n in function.planning_steps:
+            variable_names.extend(['{}_Expected Annual Damage {}'.format(dike, n)
+                                         for dike in function.dikelist])
+            variable_names_.extend(['{}_Dike Investment Costs {}'.format(dike, n)
+                                      for dike in function.dikelist])
+            variable_names__.extend(['RfR Total Costs {}'.format(n)])       
+            variable_names___.extend(['Expected Evacuation Costs {}'.format(n)])
+        
+        for dike in function.dikelist:
+            variable_name = []
+            outcomes.append(ScalarOutcome('{}_Expected Number of Deaths'.format(dike),
+                                          variable_name=['{}_Expected Number of Deaths {}'.format(
+                                                  dike, n) for n in function.planning_steps],
+                                          function=sum_over, kind=direction))
+            
+        outcomes.append(ScalarOutcome('Expected Annual Damage',
+                          variable_name=[var for var in variable_names],
+                          function=sum_over, kind=direction))
+
+        outcomes.append(ScalarOutcome('Dike Investment Costs',
+                          variable_name=[var for var in variable_names_],
+                          function=sum_over, kind=direction))
+
+        outcomes.append(ScalarOutcome('RfR Investment Costs',
+                          variable_name=[var for var in variable_names__],
+                          function=sum_over, kind=direction))
+                
+        outcomes.append(ScalarOutcome('Evacuation Costs',
+                          variable_name=[var for var in variable_names___],
+                          function=sum_over, kind=direction))
+                
+        dike_model.outcomes = outcomes
+
+        
+        
+        
+    
+>>>>>>> 39a6c1a399a9724771cf73864180382ccd8029e4
     else:
         raise TypeError('unknownx identifier')
         
