@@ -263,9 +263,6 @@ def get_model_for_problem_formulation(problem_formulation_id):
             outcomes.append(ScalarOutcome('RfR Total Costs {}'.format(n), kind=direction))
             outcomes.append(ScalarOutcome('Expected Evacuation Costs {}'.format(n), kind=direction))
         dike_model.outcomes = outcomes
-<<<<<<< HEAD
-        
-=======
            
     # Group 22 Problem Formulation:
     elif problem_formulation_id == 6:
@@ -312,7 +309,6 @@ def get_model_for_problem_formulation(problem_formulation_id):
         
         
     
->>>>>>> 39a6c1a399a9724771cf73864180382ccd8029e4
     else:
         raise TypeError('unknownx identifier')
         
