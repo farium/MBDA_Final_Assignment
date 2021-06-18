@@ -1,5 +1,5 @@
 # EPA-simmodel
-The folder contains 7 notebooks, which are named and ordered based on the analysis steps that are taken.
+The folder contains 8 notebooks, which are named and ordered based on the analysis steps that are taken.
 The first step is Problem Formulation, which is not a notebook but a python file named "problem_formulation.py".
 In the python file, a problem formulation was added using id 6. 
 This problem formulation is used throughout the notebooks to generate scenarios and outcomes.
